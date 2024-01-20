@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 150px;
+            border: 1px solid saddlebrown;
+            overflow: auto;
+        }
+
+        p {
+            width: 150px;
+            border: 1px solid orangered;
+        }
+
+        .p1 {
+            word-wrap: normal;    /* 기본값으로 글씨가 넘쳐도 자르지 않은 */
+        }
+
+        .p2 {
+            word-wrap: break-word;   /* 글씨가 넘치면 줄을 바꿔 줌 (영어에만 적용*/
+        }
+        .sec01{
+            width: 500px;
+            height: 300px;
+            /* border: 1px solid turquoise; */
+            overflow-x: scroll;
+        }
+    </style>
+
+    <script src="script/jquery-3.7.1.js"></script>
+    <script lang="java">
+        $(function(){
+            $("button").click(function(){
+                var top = $("div").scrollTop();
+                var left = $("div").scrollLeft();
+
+                console.log("top : ", top)
+                console.log("left : ", left)
+            })//button").click
+
+            $(".click").click(function(){
+                var s = $(".sec01").scrollLeft();
+                console.log("s : ", s)
+            })//click").click
+
+        }) //jquery
+
+        // $(window).scroll(function(){
+        //     $(this).scrollTop()
+        //     $(this).scrollLeft()
+        // }) ///window).scrolls
+    </script>
+</head>
+
+<body>
+    <div>
+        1.pneumonoultramicroscopicsilicovolcanoconiosis
+        2.pneumonoultramicroscopicsilicovolcanoconiosis Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, fuga quis quo
+        maiores ea illo magni sunt. Dicta nulla, voluptates illum modi quasi deserunt expedita voluptate quos nemo
+        quisquam nesciunt?
+    </div>
+    <button> scroll bar 위치</button>
+    <p class="p1">
+        영어단어 : pneumonoultramicroscopicsilicovolcanoconiosis <br>
+        한글단어 : 가나다라마바사아자차카타파하
+    </p>
+    <p class="p2">
+        영어단어 : pneumonoultramicroscopicsilicovolcanoconiosis <br>
+        한글단어 : 가나다라마바사아자차카타파하
+    </p>
+
+    <section class="sec01">
+        <img src="img/001.jpg" alt="">
+    </section>
+    <a href="#" class="click">좌표값</a>
+</body>
+
+</html>

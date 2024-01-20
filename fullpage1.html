@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fullpage.css">
+
+    <script src="script/jquery-3.7.1.js"></script>
+    <script src="script/jquery-ui.js"></script>
+    <script src="script/fullpage.js"></script>
+
+    <style type="text/css">
+        *{
+            margin: 0;padding: 0;
+        }
+        h1{font-size: 5vh;
+            color: white;
+        }
+        .section{
+            text-align: center;
+            background-size: cover;
+        }
+        #section0{
+            background-image: url("img/bg1.jpg");
+        }
+        #section1{
+            background-image: url("img/bg2.jpg");
+        }
+        #section2{
+            background-image: url("img/bg3.jpg");
+        }
+        #section3{
+            background-image: url("img/bg4.jpg");
+        }
+        #section4{
+            background-image: url("img/bg5.jpg");
+        }
+    </style>
+
+    <script lang="java">
+        $(function(){
+            $("#fullpage").fullpage({
+                navigation:true,       //버튼 여부(오른쪽 도트)
+                navigationPosition:"left",      //버튼 위치
+                navigationTooltips:["page1", "page2", "page3", "page4","page5"] ,   //버튼에 호버시 나오는 페이지 설명
+                keyboardScrolling:true,       //키보드 버튼으로 스크롤 여부
+                ScrollingSpeed:3000,        //스크롤 되는 속도 맨 앞글자 대문자임!
+            })      //슬릭과 마찬가지로 풀페이지 효과를 줄 부모에 명령어를 걸어줌
+            //원래 풀페이지 만들면 제일 마지막 페이지에 "made with~~"문구가 나오는데 
+            // fullpage.js에서 찾기 기능으로 해당 문구가 들어간 2줄 지웠음
+        })//jquery
+    </script>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section" id="section0"><h1>fullpage1</h1></div>
+        <div class="section" id="section1"><h1>fullpage2</h1></div>
+        <div class="section" id="section2"><h1>fullpage3</h1></div>
+        <div class="section" id="section3"><h1>fullpage4</h1></div>
+        <div class="section" id="section4"><h1>fullpage5</h1></div>
+    </div><!-- fullpage -->
+
+
+    <!-- 전체를 감싸는 태그의 아이디나 클래스는 (여기서는 fullpage) 임의로 지정해도 되나 
+    실제 풀페이지 붙일 클래스나 아이디는 section이라고만 해야하고 아이디에 숫자를 붙일 경우 0부터시작해서 순차적으로 줘야함 -->
+</body>
+</html>
